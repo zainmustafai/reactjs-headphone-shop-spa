@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import NavBar from "./components/NavBar/NavBar";
+import LogoSVG from './images/logo.svg'
 
 function App() {
+  const navLinks = [
+    { id: 1, text: "Home", path: "/" },
+    { id: 2, text: "About", path: "/" },
+    { id: 3, text: "Gallery", path: "/" },
+    { id: 4, text: "Contact", path: "/" },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <BrowserRouter>
+        <div className=" text-xl w-full absolute z-10">
+          <NavBar linkArray={navLinks} logo={LogoSVG} />
+        </div>
+        <Routes>
+          <Route path="/" exact element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
