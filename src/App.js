@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="">
       <BrowserRouter>
-        <div className=" text-xl w-full absolute z-10">
+        <div className=" text-xl w-full absolute z-10 top-12 ">
           <NavBar linkArray={navLinks} logo={LogoSVG} />
         </div>
         <Routes>

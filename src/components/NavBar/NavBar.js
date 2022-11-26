@@ -9,9 +9,9 @@ const NavBar = ({ linkArray,logo }) => {
       <div id="whiteSpace" className="col-span-1">
 
       </div>
-      <ul className="flex items-center justify-between col-span-1">
+      <ul className="flex items-center justify-between col-span-1 px-8">
         {linkArray.map((item) => {
-          return <li className="text-[16px]">{item.text}</li>;
+          return <li key={item.id} className="text-[16px]">{item.text}</li>;
         })}
       </ul>
     </div>
